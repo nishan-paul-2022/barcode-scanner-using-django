@@ -136,7 +136,9 @@ def views_detect_from_image(request):
             if brcde.data != "":
                 text_from_image = brcde.data.decode('utf-8')
                 type_from_image = brcde.type
-
+                return redirect(views_main)
+    text_from_image = ''
+    type_from_image = ''
     return redirect(views_main)
 
 

@@ -1,0 +1,13 @@
+﻿asgiref
+colorama
+Django
+numpy
+opencv-python
+Pillow
+python-barcode
+python-dotenv
+pytz
+pyzbar
+qrcode
+six
+sqlparse

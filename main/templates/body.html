@@ -1,0 +1,70 @@
+    {% load static %}
+    {% static 'images' as baseurl %}
+
+    <div id="id01">
+        <div id="id02">BARCODE SCANNER</div>
+
+        <div>
+            <div id="id03">
+                <h4>DETECT FROM CAMERA</h4>
+
+                <img id="id05" src='detect_from_camera' alt=""/>
+                <div class="id06">{{ text_from_camera }}</div>
+                <div class="id19" contentEditable=false data-text="TYPE">{{ type_from_camera }}</div>
+                <button onClick="location.reload(true);">TEXT</button>
+            </div>
+
+            <div id="id04">
+                <div>
+                    <h4>DETECT FROM IMAGE</h4>
+
+                    <!-- Form -->
+                    <form method="post" id="form_detect_from_image" enctype='multipart/form-data' action="detect_from_image">
+                        {% csrf_token %}
+                        <input type="file" accept="image/*" id="id17" name="uploaded_image" onchange="get_image_preview(this)" required>
+                    </form>
+
+                    <img class="id15" id="id18" src="{{ baseurl }}/{{ uploaded_image }}" alt=""/>
+
+                    <div class="id06">{{ text_from_image }}</div>
+
+                    <div class="id19" contentEditable=false data-text="TYPE">{{ type_from_image }}</div>
+
+                    <button type="submit" form="form_detect_from_image">
+                        DETECT
+                    </button>
+                </div>
+
+                <div>
+                    <h4>GENERATE IMAGE</h4>
+
+                    <!-- Form -->
+                    <form method="post" id="form_generate_image" enctype='multipart/form-data' action="generate_image">
+                        {% csrf_token %}
+
+                        <div class="id07">
+                            <select id="id14" name="type_from_generated_image" required>
+                                <option value="" disabled selected>category</option>
+                                {% for i in set_of_types %}
+                                    <option value="{{ i }}" {% if i == type_from_generated_image %}selected="selected"{% endif %}>
+                                        {{ i }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <input class="id06" id="id16" name="text_from_generated_image" value="{{ text_from_generated_image }}" required/>
+
+                        <button type="submit" form="form_generate_image" onClick="location.reload(true);">
+                            GENERATE
+                        </button>
+                    </form>
+
+                    <img class="id15" src="{{ baseurl }}/{{ generated_image }}" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>

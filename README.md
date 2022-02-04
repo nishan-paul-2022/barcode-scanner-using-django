@@ -1,0 +1,1 @@
+# barcode-scanner-using-django

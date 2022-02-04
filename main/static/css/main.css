@@ -18,8 +18,9 @@
     background-color: #2C272E;
     color: white;
     text-align: center;
-    line-height: 1.5vw;
-    height: 1.5vw;
+    line-height: 2vw;
+    height: 2vw;
+    font-size: 2vw;
     margin: 0;
     vertical-align: middle;
 }
@@ -57,7 +58,6 @@
 /*the container must be positioned relative:*/
 .id07 {
     position: relative;
-    width: 20%;
 }
 
 .id07 select {
@@ -163,18 +163,3 @@
 }
 
 #id18 {}
-
-.id19 {
-    font-size: 1vw;
-    opacity: 0.95;
-    padding: 2px;
-    display: inline;
-    border: 1px solid #ccc;
-    margin-top: 0.5vw;
-}
-
-#id20 {
-    background-color: rgba(44, 39, 46, 0.5);
-    color: white;
-    text-align: center;
-}

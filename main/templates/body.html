@@ -10,7 +10,7 @@
 
                 <img id="id05" src='detect_from_camera' alt=""/>
                 <div class="id06">{{ text_from_camera }}</div>
-                <div class="id19" contentEditable=false data-text="TYPE">{{ type_from_camera }}</div>
+                <button disabled>{{ type_from_camera }}</button>
                 <button onClick="location.reload(true);">TEXT</button>
             </div>
 
@@ -28,7 +28,7 @@
 
                     <div class="id06">{{ text_from_image }}</div>
 
-                    <div class="id19" contentEditable=false data-text="TYPE">{{ type_from_image }}</div>
+                    <button disabled>{{ type_from_image }}</button>
 
                     <button type="submit" form="form_detect_from_image">
                         DETECT

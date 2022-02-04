@@ -17,9 +17,9 @@ from django.http import HttpResponse, JsonResponse, StreamingHttpResponse
 set_of_types = [b for b in barcode.PROVIDED_BARCODES] + ['qrcode']\
 
 text_from_camera = ''
-type_from_camera = ''
+type_from_camera = 'TYPE'
 text_from_image = ''
-type_from_image = ''
+type_from_image = 'TYPE'
 type_from_generated_image = ''
 text_from_generated_image = ''
 
@@ -80,7 +80,7 @@ def video_streaming():
 
                         # put text on top of polylines
                         barcode_frame = cv2.putText(img=color_image, text=text_from_camera, org=(pts2[0], pts2[1]),
-                                                    fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.9,
+                                                    fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.75,
                                                     color=(0, 0, 255), thickness=2)
 
                         # encode the new barcode_frame that has polylines and barcode data text

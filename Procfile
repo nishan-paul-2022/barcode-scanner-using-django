@@ -1,1 +1,0 @@
-web: gunicorn done_backend_barcode_scanner.wsgi --log-file -

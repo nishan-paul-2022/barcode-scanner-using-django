@@ -1,5 +1,5 @@
 """
-WSGI config for done_backend_barcode_scanner project.
+WSGI config for barcodescannerwebapp project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'done_backend_barcode_scanner.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'barcodescannerwebapp.settings')
 
 application = get_wsgi_application()

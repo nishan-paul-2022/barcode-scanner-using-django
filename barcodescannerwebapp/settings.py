@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-jg)5#&j9&(4na_o_)59u7o901q3!nn3edl=v^h&c&fk@v#7vvq
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -26,6 +26,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -34,7 +35,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'done_backend_barcode_scanner.urls'
+ROOT_URLCONF = 'barcodescannerwebapp.urls'
 
 TEMPLATES = [
     {
@@ -52,14 +53,23 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'done_backend_barcode_scanner.wsgi.application'
+WSGI_APPLICATION = 'barcodescannerwebapp.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # OPTION 1
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+
+        # OPTION 2
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd653l0k1d2pggs',
+        'USER': 'gxqdcmsmydjkhe',
+        'PASSWORD': '2ecb2e190b23bc98c4dbd1f29539db64cc049539e69e2db595dbfaccb65c34bd',
+        'HOST': 'ec2-3-224-184-9.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
